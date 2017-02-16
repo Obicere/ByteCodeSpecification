@@ -72,6 +72,7 @@ public enum Identifier {
     FRAME_CODE_BLOCK,
     IMPLICIT_CODE_BLOCK,
     LINE_CODE_BLOCK,
+    NAMED_CODE_BLOCK,
 
     // code frame
 

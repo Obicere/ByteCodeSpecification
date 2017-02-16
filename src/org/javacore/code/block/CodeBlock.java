@@ -7,6 +7,8 @@ import org.javacore.Identifier;
  */
 public interface CodeBlock extends Identifiable {
 
+    public int getStartPC();
+
     public String getName();
 
     @Override

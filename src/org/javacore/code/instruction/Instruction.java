@@ -11,7 +11,7 @@ public interface Instruction extends Identifiable {
 
     public int getOpCode();
 
-    public int getLength();
+    public int getLength(final int pc);
 
     @Override
     default public Identifier getIdentifier() {

@@ -11,15 +11,15 @@ import org.javacore.code.table.LocalVariableTable;
  */
 public interface Code extends Identifiable {
 
+    public int getMaxLocals();
+
+    public int getMaxStack();
+
     public CodeBlockTable getCodeBlockTable();
 
     public CodeExceptionTable getCodeExceptionTable();
 
     public LocalVariableTable getLocalVariableTable();
-
-    public int getStartPC();
-
-    public void setStartPC(final int pc);
 
     public int getSize();
 
