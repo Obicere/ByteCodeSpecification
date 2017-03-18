@@ -2,20 +2,18 @@ package org.javacore.code.block.label;
 
 import org.javacore.Identifiable;
 import org.javacore.Identifier;
-import org.javacore.code.block.CodeBlock;
+import org.javacore.code.Code;
 
 /**
  * @author Obicere
  */
 public interface Label extends Identifiable {
 
-    public CodeBlock getBlock();
+    public String getName();
 
-    public void setCodeBlock(final CodeBlock block);
+    public Code getCode();
 
     public int getOffset();
-
-    public void setOffset(final int offset);
 
     @Override
     default public Identifier getIdentifier() {
