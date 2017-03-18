@@ -13,7 +13,9 @@ public interface Label extends Identifiable {
 
     public Code getCode();
 
-    public int getOffset();
+    public int getAddress();
+
+    public void setAddress(final int address);
 
     @Override
     default public Identifier getIdentifier() {
