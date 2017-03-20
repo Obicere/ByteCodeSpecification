@@ -7,7 +7,7 @@ import org.javacore.type.generic.GenericDeclarationDeclarer;
 
 /**
  */
-public interface JCClass extends ReferenceType, GenericDeclarationDeclarer<ClassGenericDeclaration>, IdentifiableNode {
+public interface JCClass extends ReferenceType, GenericDeclarationDeclarer<ClassGenericDeclaration>, Attributable {
 
     // Java spec required methods
 
@@ -34,6 +34,18 @@ public interface JCClass extends ReferenceType, GenericDeclarationDeclarer<Class
     public JCMethod[] getMethods();
 
     // external required methods
+
+    public String getPackage();
+
+    public String getCanonicalName();
+
+    public String getSimpleName();
+
+    public JCClass getOuterClass();
+
+    public JCClass getEnclosingClass();
+
+    public JCMethod getEnclosingMethod();
 
     public Annotation[] getAnnotations();
 

@@ -11,6 +11,8 @@ public interface CodeBlockTable extends Identifiable {
     // Might have to introduce line numbers here as well, to make the
     // LineCodeBlock work smoothly
 
+    public CodeBlock getCodeBlock(final int pc);
+
     public CodeBlock[] getCodeBlocks();
 
     @Override

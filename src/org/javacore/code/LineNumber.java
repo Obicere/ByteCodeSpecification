@@ -1,12 +1,14 @@
 package org.javacore.code;
 
+import org.javacore.code.block.label.Label;
+
 /**
  */
 public interface LineNumber {
 
-    public int getStartPC();
+    public Label getAddress();
 
-    public void setStartPC(final int pc);
+    public void setAddress(final Label address);
 
     public int getLineNumber();
 }

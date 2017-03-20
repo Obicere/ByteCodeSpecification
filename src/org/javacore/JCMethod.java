@@ -5,7 +5,7 @@ import org.javacore.type.generic.MethodGenericDeclaration;
 
 /**
  */
-public interface JCMethod extends GenericDeclarationDeclarer<MethodGenericDeclaration>, IdentifiableNode {
+public interface JCMethod extends GenericDeclarationDeclarer<MethodGenericDeclaration>, Attributable {
 
     @Override
     default public Identifier getIdentifier() {

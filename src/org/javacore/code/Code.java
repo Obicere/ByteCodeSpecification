@@ -1,7 +1,8 @@
 package org.javacore.code;
 
-import org.javacore.Identifiable;
+import org.javacore.Attributable;
 import org.javacore.Identifier;
+import org.javacore.code.block.label.Label;
 import org.javacore.code.instruction.Instruction;
 import org.javacore.code.table.CodeBlockTable;
 import org.javacore.code.table.CodeExceptionTable;
@@ -9,7 +10,7 @@ import org.javacore.code.table.LocalVariableTable;
 
 /**
  */
-public interface Code extends Identifiable {
+public interface Code extends Attributable {
 
     public int getMaxLocals();
 
@@ -23,7 +24,31 @@ public interface Code extends Identifiable {
 
     public int getSize();
 
+    public Label getLabel(final int pc);
+
+    public Label getLabel(final int pc, final boolean special);
+
     public Instruction[] getInstructions();
+
+    public Instruction[] getInstructions(final int from, final int to);
+
+    public boolean insertBefore(final int pc, final Instruction[] instructions);
+
+    public boolean insertBefore(final int pc, final Instruction[] instructions, final int start, final int length);
+
+    public boolean insert(final Instruction[] instructions);
+
+    public boolean insert(final int pc, final Instruction[] instructions);
+
+    public boolean insert(final int pc, final Instruction[] instructions, final boolean updateLabels);
+
+    public boolean insert(final int pc, final Instruction[] instructions, final int start, final int length);
+
+    public boolean insert(final int pc, final Instruction[] instructions, final int start, final int length, final boolean updateLabels);
+
+    public Instruction[] removeAll();
+
+    public Instruction[] remove(final int startPc, final int endPc);
 
     /*
     public boolean contains(final int pc);
@@ -46,16 +71,6 @@ public interface Code extends Identifiable {
 
     public boolean addInstruction(final Instruction instruction, final int pc);
 
-    public boolean addInstructions(final Instruction[] instructions);
-
-    public boolean addInstructions(final Iterable<Instruction> instructions);
-
-    public boolean addInstructions(final Instruction[] instructions, final int pc);
-
-    public boolean addInstructions(final Iterable<Instruction> instructions, final int pc);
-
-    public Instruction[] removeAllInstructions();
-
     public Instruction removeAllInstructions(final Instruction instruction);
 
     public Instruction[] removeAllInstructions(final Predicate<Instruction> condition);
@@ -63,8 +78,6 @@ public interface Code extends Identifiable {
     public Instruction removeInstruction(final Instruction instruction);
 
     public Instruction removeInstruction(final int pc);
-
-    public Instruction[] removeInstructions(final int startPc, final int endPc);
     */
 
     @Override

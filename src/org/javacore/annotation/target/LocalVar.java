@@ -1,12 +1,14 @@
 package org.javacore.annotation.target;
 
+import org.javacore.code.block.label.Label;
+
 /**
  */
 public interface LocalVar {
 
-    public int getStartPC();
+    public Label getStart();
 
-    public int getLength();
+    public Label getEnd();
 
     public int getIndex();
 
