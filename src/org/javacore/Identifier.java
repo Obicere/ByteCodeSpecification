@@ -32,6 +32,26 @@ public enum Identifier {
     SHORT_ELEMENT_VALUE,
     STRING_ELEMENT_VALUE,
 
+    // annotation path
+
+    PATH,
+
+    // annotation target
+
+    TARGET,
+
+    CATCH_TARGET,
+    EMPTY_TARGET,
+    LOCAL_VAR_TARGET,
+    LOCAL_VAR,
+    METHOD_FORMAL_PARAMETER_TARGET,
+    OFFSET_TARGET,
+    SUPER_TYPE_TARGET,
+    THROWS_TARGET,
+    TYPE_ARGUMENT_TARGET,
+    TYPE_PARAMETER_BOUND_TARGET,
+    TYPE_PARAMETER_TARGET,
+
     // attributes
 
     ATTRIBUTE,

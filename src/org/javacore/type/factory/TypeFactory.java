@@ -3,7 +3,7 @@ package org.javacore.type.factory;
 import org.javacore.type.ArrayType;
 import org.javacore.type.GenericType;
 import org.javacore.type.PrimitiveType;
-import org.javacore.type.Type;
+import org.javacore.type.TypedClass;
 import org.javacore.type.VoidType;
 import org.javacore.type.WildCardIndicator;
 import org.javacore.type.WildCardType;
@@ -17,7 +17,7 @@ import org.javacore.type.signature.TypeVariableSignature;
  */
 public interface TypeFactory {
 
-    public Type createClassType(final ClassTypeSignature name);
+    public TypedClass createClassType(final ClassTypeSignature name);
 
     public ArrayType createArrayType(final TypeSignature type);
 
