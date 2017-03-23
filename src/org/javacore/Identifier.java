@@ -84,6 +84,7 @@ public enum Identifier {
     // code label
 
     LABEL,
+    LINE_NUMBER,
 
     // code block
 
