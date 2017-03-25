@@ -6,7 +6,7 @@ import org.javacore.type.factory.TypeFactory;
 /**
  * @author Obicere
  */
-public interface GenericDeclaration<G extends GenericDeclarationDeclarer<? extends GenericDeclaration<G>>> {
+public interface GenericDeclaration<G extends Declaration<? extends GenericDeclaration<G>>> {
 
     public GenericType[] getGenericTypes();
 

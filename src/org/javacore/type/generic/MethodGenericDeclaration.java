@@ -5,7 +5,7 @@ import org.javacore.type.Type;
 
 /**
  */
-public interface MethodGenericDeclaration extends GenericDeclaration {
+public interface MethodGenericDeclaration extends GenericDeclaration<JCMethod> {
 
     @Override
     public JCMethod getDeclarer();

@@ -8,7 +8,11 @@ public interface TypedClass extends ReferenceType {
 
     public WildCardType[] getWildcardTypes();
 
+    public void setWildcardTypes(final WildCardType[] arguments);
+
     public JCClass getRawType();
+
+    public void setRawType(final JCClass rawType);
 
     public TypedClass getGenericOuterClass();
 

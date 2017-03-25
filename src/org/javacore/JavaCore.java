@@ -2,7 +2,7 @@ package org.javacore;
 
 import org.javacore.type.Type;
 import org.javacore.type.TypeRepository;
-import org.javacore.type.generic.GenericDeclarationDeclarer;
+import org.javacore.type.generic.Declaration;
 
 /**
  * @author Obicere
@@ -62,7 +62,7 @@ public class JavaCore {
         return typeRepository.getType(name);
     }
 
-    public static Type getType(final String name, final GenericDeclarationDeclarer<?> scope) {
+    public static Type getType(final String name, final Declaration<?> scope) {
         return typeRepository.getType(name, scope);
     }
 }

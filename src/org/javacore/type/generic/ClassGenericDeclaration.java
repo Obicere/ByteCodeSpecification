@@ -5,7 +5,7 @@ import org.javacore.type.TypedClass;
 
 /**
  */
-public interface ClassGenericDeclaration extends GenericDeclaration {
+public interface ClassGenericDeclaration extends GenericDeclaration<JCClass> {
 
     @Override
     public JCClass getDeclarer();

@@ -3,11 +3,11 @@ package org.javacore;
 import org.javacore.annotation.Annotation;
 import org.javacore.type.ReferenceType;
 import org.javacore.type.generic.ClassGenericDeclaration;
-import org.javacore.type.generic.GenericDeclarationDeclarer;
+import org.javacore.type.generic.Declaration;
 
 /**
  */
-public interface JCClass extends ReferenceType, GenericDeclarationDeclarer<ClassGenericDeclaration>, Attributable {
+public interface JCClass extends ReferenceType, Declaration<ClassGenericDeclaration>, Attributable {
 
     // Java spec required methods
 
