@@ -32,10 +32,6 @@ public interface Code extends Attributable {
 
     public Instruction[] getInstructions(final int from, final int to);
 
-    public boolean insertBefore(final int pc, final Instruction[] instructions);
-
-    public boolean insertBefore(final int pc, final Instruction[] instructions, final int start, final int length);
-
     public boolean insert(final Instruction[] instructions);
 
     public boolean insert(final int pc, final Instruction[] instructions);
