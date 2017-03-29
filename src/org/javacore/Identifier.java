@@ -140,6 +140,7 @@ public enum Identifier {
     BALOAD,
     BASTORE,
     BIPUSH,
+    BREAKPOINT,
     CALOAD,
     CASTORE,
     CHECKCAST,
@@ -246,6 +247,8 @@ public enum Identifier {
     ILOAD_1,
     ILOAD_2,
     ILOAD_3,
+    IMPDEP1,
+    IMPDEP2,
     IMUL,
     INEG,
     INSTANCEOF,
@@ -357,5 +360,4 @@ public enum Identifier {
     CONSTANT_NAME_AND_TYPE,
     CONSTANT_STRING,
     CONSTANT_UTF8
-
 }
