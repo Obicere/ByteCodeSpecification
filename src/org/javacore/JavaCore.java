@@ -4,6 +4,9 @@ import org.javacore.type.Type;
 import org.javacore.type.TypeRepository;
 import org.javacore.type.generic.Declaration;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * @author Obicere
  */
@@ -36,7 +39,11 @@ public class JavaCore {
     private static TypeRepository createRepository(final String name) {
         try {
             final Class<?> cls = Class.forName(name);
-            final Object instance = cls.newInstance();
+            final Constructor<?> constructor = cls.getConstructor();
+
+            constructor.setAccessible(true);
+
+            final Object instance = constructor.newInstance();
             return (TypeRepository) instance;
         } catch (final ClassNotFoundException e) {
             System.err.println("Could not find custom class: " + name);
@@ -49,6 +56,12 @@ public class JavaCore {
             e.printStackTrace();
         } catch (final ClassCastException e) {
             System.err.println("The custom class is not a subclass of TypeRepository: " + name);
+            e.printStackTrace();
+        } catch (final NoSuchMethodException e) {
+            System.err.println("No default constructor available for class: " + name);
+            e.printStackTrace();
+        } catch (final InvocationTargetException e) {
+            System.err.println("Could not target constructor for class: " + name);
             e.printStackTrace();
         }
         return null;
