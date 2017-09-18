@@ -10,6 +10,9 @@ import org.javacore.type.TypedClass;
 import org.javacore.type.generic.ClassGenericDeclaration;
 import org.javacore.type.generic.Declaration;
 
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
 /**
  */
 public interface JCClass extends ReferenceType, Declaration<ClassGenericDeclaration>, Attributable {
@@ -137,6 +140,104 @@ public interface JCClass extends ReferenceType, Declaration<ClassGenericDeclarat
     public Annotation[] getAnnotations();
 
     public void setAnnotations(final Annotation[] annotations);
+
+    // library functionality
+
+    public boolean addMethod(final JCMethod method);
+
+    public boolean addMethods(final JCMethod ... methods);
+
+    public boolean addMethods(final JCMethod[] methods, final int start, final int length);
+
+    public boolean addMethods(final Iterable<JCMethod> methods);
+
+    public boolean addMethods(final JCMethod[] methods, final Predicate<JCMethod> condition);
+
+    public boolean addMethods(final Iterable<JCMethod> methods, final Predicate<JCMethod> condition);
+
+    public JCMethod removeMethod(final JCMethod method);
+
+    public JCMethod removeMethod(final String name);
+
+    public JCMethod removeMethod(final int index);
+
+    public JCMethod removeMethod(final Predicate<JCMethod> condition);
+
+    public JCMethod[] removeMethods(final String name);
+
+    public JCMethod[] removeMethods(final int[] indices);
+
+    public JCMethod[] removeMethods(final int start, final int length);
+
+    public JCMethod[] removeMethods(final Iterable<JCMethod> methods);
+
+    public JCMethod[] removeMethods(final Predicate<JCMethod> condition);
+
+    public JCMethod[] removeAllMethods();
+
+    public Stream<JCMethod> streamMethods();
+
+    public boolean containsMethod(final JCMethod method);
+
+    public boolean containsMethods(final JCMethod method);
+
+    public JCMethod getMethod(final String name);
+
+    public JCMethod[] getMethods(final String name);
+
+    public JCMethod[] getMethods(final Predicate<JCMethod> condition);
+
+    public JCMethod[] getMethods(final int start, final int length);
+    
+    public boolean addField(final JCField method);
+
+    public boolean addFields(final JCField ... methods);
+
+    public boolean addFields(final JCField[] methods, final int start, final int length);
+
+    public boolean addFields(final Iterable<JCField> methods);
+
+    public boolean addFields(final JCField[] methods, final Predicate<JCField> condition);
+
+    public boolean addFields(final Iterable<JCField> methods, final Predicate<JCField> condition);
+
+    public JCField removeField(final JCField method);
+
+    public JCField removeField(final String name);
+
+    public JCField removeField(final int index);
+
+    public JCField removeField(final Predicate<JCField> condition);
+
+    public JCField[] removeFields(final String name);
+
+    public JCField[] removeFields(final int[] indices);
+
+    public JCField[] removeFields(final int start, final int length);
+
+    public JCField[] removeFields(final Iterable<JCField> methods);
+
+    public JCField[] removeFields(final Predicate<JCField> condition);
+
+    public JCField[] removeAllFields();
+
+    public Stream<JCField> streamFields();
+
+    public boolean containsField(final JCField method);
+
+    public boolean containsFields(final JCField method);
+
+    public JCField getField(final String name);
+
+    public JCField[] getFields(final String name);
+
+    public JCField[] getFields(final Predicate<JCField> condition);
+
+    public JCField[] getFields(final int start, final int length);
+
+    public boolean addInnerClass(final JCClass innerClass);
+
+    public boolean addInnerClasses(final JCClass[] innerClasses);
 
     // default implementations for this spec object
 
